@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float dist;
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetKeyDown("up"))
         {
