@@ -18,12 +18,8 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    private void FixedUpdate()
+    void Update()
     {
         if (!isDead)
         {
@@ -52,7 +48,7 @@ public class Player : MonoBehaviour
             {
                 if (xPosition != 1)
                 {
-                    transform.position = transform.position + new Vector3(10, 0, 0);
+                    transform.position = transform.position + new Vector3(5, 0, 0);
                     xPosition += 1;
 
                 }
@@ -62,7 +58,7 @@ public class Player : MonoBehaviour
             {
                 if ( xPosition != 0)
                 {
-                    transform.position = transform.position + new Vector3(-10, 0, 0);
+                    transform.position = transform.position + new Vector3(-5, 0, 0);
                     xPosition -= 1;
 
                 }
