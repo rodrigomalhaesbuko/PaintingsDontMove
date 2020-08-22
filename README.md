@@ -1,2 +1,2 @@
 # PaintingsDontMove
-A project 
+A project about paitings and kung-fu.
