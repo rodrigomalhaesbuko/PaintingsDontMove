@@ -10,5 +10,6 @@ public class TagEnum
    static public string Hieroglyph = "Hieroglyph";
    static public string ShadowBarrier = "ShadowBarrier";
    static public string Person = "Person";
+   static public string Hit = "Hit";
 
 }
