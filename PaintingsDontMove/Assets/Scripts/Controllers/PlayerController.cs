@@ -14,6 +14,11 @@ public class PlayerController : MonoBehaviour
     private int xPosition = 0;
     private int yPosition = 1;
 
+    private const int maxPauwa = 3;
+
+    private float standoPauwa = 3;
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -71,6 +76,28 @@ public class PlayerController : MonoBehaviour
 
             }
         }
+
+        if (Input.GetKey("space"))
+        {
+            if (standoPauwa > 0)
+            {
+                timeManipulation.ZAWARUDO = true;
+                standoPauwa -= Time.deltaTime;
+
+            }
+            else
+            {
+                timeManipulation.ZAWARUDO = false;
+            }
+        }
+        else
+        {
+            timeManipulation.ZAWARUDO = false;
+
+            if (standoPauwa < maxPauwa)
+                standoPauwa += Time.deltaTime/2;
+        }
+        //Debug.Log(standoPauwa);
     }
 
 
