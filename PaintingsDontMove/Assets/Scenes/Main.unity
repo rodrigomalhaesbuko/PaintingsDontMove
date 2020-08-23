@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  gameOverDelay: 1
+  gameOverDelay: 0.2
   scoreText: {fileID: 588054045}
 --- !u!4 &1181359718
 Transform:
