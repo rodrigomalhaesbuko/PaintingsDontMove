@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Attack
+  - Hieroglyph
   layers:
   - Default
   - TransparentFX
@@ -40,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: background
     uniqueID: 1234342277
     locked: 0
