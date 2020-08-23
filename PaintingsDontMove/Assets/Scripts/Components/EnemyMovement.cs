@@ -26,7 +26,11 @@ public class EnemyMovement : MonoBehaviour
             //end game
             Debug.Log("teste\n");
             SceneManager.LoadScene("GameOver");
+        }
 
+        if (other.gameObject.tag == TagEnum.Hit)
+        {
+            GameObject.Find("Montu").GetComponent<Animator>().SetTrigger("Attack");
         }
     }
 }
