@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 /* Para usar a classe GameManger sem criar um referencia forte utilize o método
@@ -9,7 +11,7 @@ public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
     public int score;
-    public float gameOverDelay = 1f;
+    public float gameOverDelay = 0f;
     public Text scoreText;
     void Start()
     {
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
         //save highScore
         Debug.Log("SCOREEE::::" + score.ToString());
         PlayerPrefs.SetInt("score", score);
+
         SceneManager.LoadScene("GameOver");
         // Precisa fazer a Scene Game Over aparecer
     }
@@ -35,8 +38,13 @@ public class GameManager : MonoBehaviour
         //save highScore
         Debug.Log("SCOREEE::::" + score.ToString());
         PlayerPrefs.SetInt("score", score);
-        SceneManager.LoadScene("GameOverSeenMoving");
+        Invoke("LoadGameOverSeenMoving", gameOverDelay);
         // Precisa fazer a Scene Game Over aparecer
+    }
+
+    private void LoadGameOverSeenMoving()
+    {
+        SceneManager.LoadScene("GameOverSeenMoving");
     }
 
     public void IncreasePoints()
@@ -60,5 +68,10 @@ public class GameManager : MonoBehaviour
 
         }
         scoreText.text = score.ToString();
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(3);
     }
 }
