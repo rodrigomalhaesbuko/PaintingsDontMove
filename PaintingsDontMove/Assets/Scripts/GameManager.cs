@@ -23,6 +23,12 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("GameOver");
+        // Precisa fazer a Scene Game Over aparecer
+    }
+
+    public void IncreasePoints()
+    {
+        // Adiciona pontos ao placar e muda a UI
     }
 }
