@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -15,10 +16,17 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("OBAA");
         if(other.gameObject.tag == TagEnum.Attack)
         {
             Destroy(gameObject);
+        }
+
+        if(other.gameObject.tag == TagEnum.Hieroglyph)
+        {
+            //end game
+            Debug.Log("teste\n");
+            SceneManager.LoadScene("Main");
+
         }
     }
 }
