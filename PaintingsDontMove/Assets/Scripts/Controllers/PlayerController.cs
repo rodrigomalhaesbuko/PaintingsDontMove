@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private const float verticalStep = 5;
 
+    public Image pauwaImg;
 
     private void Start()
     {
@@ -99,6 +101,8 @@ public class PlayerController : MonoBehaviour
             if (standoPauwa < maxPauwa)
                 standoPauwa += Time.deltaTime/2;
         }
+
+        pauwaImg.fillAmount = standoPauwa/maxPauwa;
         //Debug.Log(standoPauwa);
     }
 
