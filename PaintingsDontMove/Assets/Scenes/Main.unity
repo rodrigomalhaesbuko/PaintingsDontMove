@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 548809632}
   - component: {fileID: 548809631}
   m_Layer: 0
-  m_Name: boarder
+  m_Name: border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
