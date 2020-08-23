@@ -21,6 +21,7 @@ public class EnemyCMovement : EnemyMovement
     {
         if (!timeManipulation.ZAWARUDO)
         {
+            GetComponent<Animator>().SetTrigger("Move");
             Vector2 pos = transform.position;
             pos.x -= (speed * Time.deltaTime) * directionModifier;
             transform.position = pos;
@@ -33,6 +34,9 @@ public class EnemyCMovement : EnemyMovement
                     StopKnockback();
                 }
             }
+        }else
+        {
+            GetComponent<Animator>().SetTrigger("Idle");
         }
     }
 
