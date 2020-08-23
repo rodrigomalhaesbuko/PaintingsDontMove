@@ -103,7 +103,6 @@ public class PlayerController : MonoBehaviour
         }
 
         pauwaImg.fillAmount = standoPauwa/maxPauwa;
-        //Debug.Log(standoPauwa);
     }
 
 

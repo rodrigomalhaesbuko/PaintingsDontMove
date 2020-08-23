@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
             
             if(AdmireComponent.isAdmiring)
             {
-                if(!timeManipulation.ZAWARUDO)
+                if(!timeManipulation.ZAWARUDO || Input.GetKeyDown("up") || Input.GetKeyDown("down") || Input.GetKeyDown("right") || Input.GetKeyDown("left"))
                 {
                     GameOver();
                 }
