@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     private float standoPauwa = 3;
 
+    private const float verticalStep = 5;
+
 
     private void Start()
     {
@@ -32,7 +34,7 @@ public class PlayerController : MonoBehaviour
         {
             if (yPosition != 2)
             {
-                transform.position = transform.position + new Vector3(0, 6, 0);
+                transform.position = transform.position + new Vector3(0, verticalStep, 0);
                 yPosition += 1;
 
             }
@@ -42,7 +44,7 @@ public class PlayerController : MonoBehaviour
         {
             if (yPosition != 0)
             {
-                transform.position = transform.position + new Vector3(0, -6, 0);
+                transform.position = transform.position + new Vector3(0, - verticalStep, 0);
                 yPosition -= 1;
 
             }
