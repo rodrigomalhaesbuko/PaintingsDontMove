@@ -29,13 +29,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("SCOREEE::::" + score.ToString());
         PlayerPrefs.SetInt("score", score);
 
-        Invoke("LoadGameOver", gameOverDelay);
-        // Precisa fazer a Scene Game Over aparecer
-    }
-
-    private void LoadGameOver()
-    {
         SceneManager.LoadScene("GameOver");
+        // Precisa fazer a Scene Game Over aparecer
     }
 
     public void GameOverSeenMoving()
