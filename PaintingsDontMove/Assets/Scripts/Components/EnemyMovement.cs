@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
         {
             //end game
             Debug.Log("teste\n");
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("GameOver");
 
         }
     }
