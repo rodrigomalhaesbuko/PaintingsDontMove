@@ -26,7 +26,7 @@ public class EnemyBMovement : EnemyMovement
         {
             //end game
             Debug.Log("teste\n");
-            SceneManager.LoadScene("GameOver");
+            gm.GameOver();
         }
     }
 

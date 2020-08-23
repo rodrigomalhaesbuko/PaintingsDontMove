@@ -13,7 +13,10 @@ public class EnemyGenerator : MonoBehaviour
     private float spawnTime;
     private float counter = 0;
     private int randomEnemy;
-    private bool slowEnemySpawned = false;    
+    private bool slowEnemySpawned = false;
+    private int chanceToSpawnA = 0;
+    private int chanceToSpawnB = 0;
+    private int chanceToSpawnC = 0;
 
     private void Start()
     {
@@ -37,28 +40,55 @@ public class EnemyGenerator : MonoBehaviour
 
     IEnumerator SpawEnemy()
     {
+        if (AdmireComponent.howManyTimesWasAdmired >= 0 && AdmireComponent.howManyTimesWasAdmired < 2)
+        {
+            chanceToSpawnA = 100;
+            chanceToSpawnB = 0;
+            chanceToSpawnC = 0;
+        }
+
+        if (AdmireComponent.howManyTimesWasAdmired >= 2 && AdmireComponent.howManyTimesWasAdmired < 4)
+        {
+            chanceToSpawnA = 75;
+            chanceToSpawnB = 25;
+            chanceToSpawnC = 0;
+        }
+
+        if (AdmireComponent.howManyTimesWasAdmired >= 4 && AdmireComponent.howManyTimesWasAdmired < 6)
+        {
+            chanceToSpawnA = 50;
+            chanceToSpawnB = 25;
+            chanceToSpawnC = 25;
+        }
+
         randomEnemy = Random.Range(0, 100);
         Debug.Log("Slow Enemy Slow is: " + slowEnemySpawned);
         if (!slowEnemySpawned)
         {
-            if (randomEnemy >= 0 && randomEnemy <= 50)
+            if (randomEnemy >= 0 && randomEnemy <= chanceToSpawnA)
             {
                 GameObject enemy = Instantiate(EnemyA, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
                 enemy.GetComponent<EnemyMovement>().generator = gameObject.GetComponent<EnemyGenerator>();
             }
 
-            if (randomEnemy > 50 && randomEnemy <= 75)
+            if (chanceToSpawnB != 0)
             {
-                slowEnemySpawned = true;
-                GameObject enemy = Instantiate(EnemyB, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-                enemy.GetComponent<EnemyMovement>().generator = gameObject.GetComponent<EnemyGenerator>();
+                if (randomEnemy > chanceToSpawnA && randomEnemy <= chanceToSpawnA + chanceToSpawnB)
+                {
+                    slowEnemySpawned = true;
+                    GameObject enemy = Instantiate(EnemyB, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+                    enemy.GetComponent<EnemyMovement>().generator = gameObject.GetComponent<EnemyGenerator>();
+                }
             }
 
-            if (randomEnemy > 75 && randomEnemy <= 100)
+            if (chanceToSpawnC != 0)
             {
-                slowEnemySpawned = true;
-                GameObject enemy = Instantiate(EnemyC, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-                enemy.GetComponent<EnemyMovement>().generator = gameObject.GetComponent<EnemyGenerator>();
+                if (chanceToSpawnA + chanceToSpawnB > 75 && chanceToSpawnA + chanceToSpawnB + chanceToSpawnC <= 100)
+                {
+                    slowEnemySpawned = true;
+                    GameObject enemy = Instantiate(EnemyC, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+                    enemy.GetComponent<EnemyMovement>().generator = gameObject.GetComponent<EnemyGenerator>();
+                }
             }
         }
         

@@ -21,23 +21,21 @@ public class GameManager : MonoBehaviour
     //    score += 15;
     //}
 
-    public void EndGame()
-    {
-        if (!gameHasEnded)
-        {
-            gameHasEnded = true;
-            Debug.Log("Game Over");
-            Invoke("GameOver", gameOverDelay);
-            // Chamar tela de Game Over
-        }
-    }
-
     public void GameOver()
     {
         //save highScore
         Debug.Log("SCOREEE::::" + score.ToString());
         PlayerPrefs.SetInt("score", score);
         SceneManager.LoadScene("GameOver");
+        // Precisa fazer a Scene Game Over aparecer
+    }
+
+    public void GameOverSeenMoving()
+    {
+        //save highScore
+        Debug.Log("SCOREEE::::" + score.ToString());
+        PlayerPrefs.SetInt("score", score);
+        SceneManager.LoadScene("GameOverSeenMoving");
         // Precisa fazer a Scene Game Over aparecer
     }
 
@@ -56,7 +54,7 @@ public class GameManager : MonoBehaviour
             {
                 if(!timeManipulation.ZAWARUDO || Input.GetKeyDown("up") || Input.GetKeyDown("down") || Input.GetKeyDown("right") || Input.GetKeyDown("left"))
                 {
-                    GameOver();
+                    GameOverSeenMoving();
                 }
             }
 
