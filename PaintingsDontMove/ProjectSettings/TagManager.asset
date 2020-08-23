@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Attack
   - Hieroglyph
+  - ShadowBarrier
+  - Person
   layers:
   - Default
   - TransparentFX
@@ -46,4 +48,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 3DPeaple
+    uniqueID: 3664013377
     locked: 0
