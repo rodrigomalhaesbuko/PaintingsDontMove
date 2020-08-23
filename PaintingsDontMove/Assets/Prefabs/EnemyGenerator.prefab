@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyA: {fileID: 7577784656312197455, guid: 8a82289a160d84a71ba68611b24841c1, type: 3}
+  EnemyB: {fileID: 7577784656312197455, guid: 882c0b0d9b96b4442b9a4f80f6793820, type: 3}
+  EnemyC: {fileID: 2837071487554639147, guid: 5b53830770430954a97e9fef99cc1ec3, type: 3}
   spawnTimeInit: 0.5
   spawnTimeEnd: 1

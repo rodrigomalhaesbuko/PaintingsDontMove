@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7577784656312197448}
   - component: {fileID: 7577784656312197444}
   - component: {fileID: 7577784656312197451}
-  - component: {fileID: 4036559280487021369}
+  - component: {fileID: 493664010238883941}
   m_Layer: 0
-  m_Name: EnemyB-
+  m_Name: EnemyC-
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1e2c544102c654232b42f21501edcb89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 91621911a59454268ba74902ab4c229d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,7 +129,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.22, y: 13.81}
   m_EdgeRadius: 0
---- !u!114 &4036559280487021369
+--- !u!114 &493664010238883941
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,9 +138,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7577784656312197455}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 350255fa0b0ab9d46b46b032e9819afb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c17b0f271b2dec4f97911deb116b260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -4
   generator: {fileID: 0}
-  enemyType: {fileID: 0}
