@@ -25,5 +25,13 @@ public class GameOver : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene("Main");
+        }
+    }
+
 
 }
