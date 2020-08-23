@@ -207,8 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41539ad9907e0aa49a654d68700d2d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 1250912180}
-  highscore: {fileID: 694348094}
 --- !u!1 &308496479
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,8 +406,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: DON'T LET YOUR ENEMIES REACH THE PILLAR IN THE CENTER BY STANDING IN FRONT
-    OF THEM RIGHT BEFORE THEY DO!
+  m_Text: USE YOUR POWER TO FREEZE TIME AND DON'T MOVE WHILE PEOPLE ARE LOOKING AT
+    THE PAINTING!
 --- !u!222 &445319045
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1092,12 +1090,12 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.636
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1213,7 +1211,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YOUR POWER WAS STOLEN!
+  m_Text: YOU WERE SEEN MOVING!
 --- !u!222 &2013088350
 CanvasRenderer:
   m_ObjectHideFlags: 0

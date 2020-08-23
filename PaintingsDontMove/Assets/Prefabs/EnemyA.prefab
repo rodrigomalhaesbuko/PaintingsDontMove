@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  generator: {fileID: 0}
+  enemyType: {fileID: 7577784656312197455}
 --- !u!50 &7577784656312197444
 Rigidbody2D:
   serializedVersion: 4

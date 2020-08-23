@@ -16,8 +16,8 @@ public class GameOver : MonoBehaviour
             highscore = score;
             PlayerPrefs.SetInt("highscore", highscore);
         }
-        this.score.text = "Your score: " + score.ToString();
-        this.highscore.text = "Your score: " + highscore.ToString();
+        this.score.text = score.ToString();
+        this.highscore.text = highscore.ToString();
     }
 
     public void Restart()

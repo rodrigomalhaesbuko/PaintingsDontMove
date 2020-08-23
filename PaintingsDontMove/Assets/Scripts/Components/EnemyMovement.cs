@@ -6,18 +6,23 @@ using UnityEngine.SceneManagement;
 public class EnemyMovement : MonoBehaviour
 {
     public float speed;
+    public int poits = 15;
     private GameManager gm;
+
     private void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
+    public EnemyGenerator generator;
+    public float directionModifier = 1f;
+
     // Update is called once per frame
     void Update()
     {
         if (!timeManipulation.ZAWARUDO)
         {
             Vector2 pos = transform.position;
-            pos.x -= speed * Time.deltaTime;
+            pos.x -= (speed * Time.deltaTime) * directionModifier ;
             transform.position = pos;
         }
     }
@@ -26,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if(other.gameObject.tag == TagEnum.Attack)
         {
-            StartCoroutine(applyScore());
+            StartCoroutine(ApplyScore());
             Destroy(gameObject);
         }
 
@@ -42,9 +47,9 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    IEnumerator applyScore()
+    IEnumerator ApplyScore()
     {
-        gm.score += 15;
+        gm.score += poits;
         yield return null;
            
     }

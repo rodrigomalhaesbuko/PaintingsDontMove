@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 /* Para usar a classe GameManger sem criar um referencia forte utilize o método
  * FindObjectOfType<GameManager>();
  */
@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     bool gameHasEnded = false;
     public int score;
     public float gameOverDelay = 1f;
-
+    public Text scoreText;
     void Start()
     {
         score = 0;
@@ -54,11 +54,13 @@ public class GameManager : MonoBehaviour
             
             if(AdmireComponent.isAdmiring)
             {
-                if(!timeManipulation.ZAWARUDO)
+                if(!timeManipulation.ZAWARUDO || Input.GetKeyDown("up") || Input.GetKeyDown("down") || Input.GetKeyDown("right") || Input.GetKeyDown("left"))
                 {
                     GameOver();
                 }
             }
+
         }
+        scoreText.text = score.ToString();
     }
 }

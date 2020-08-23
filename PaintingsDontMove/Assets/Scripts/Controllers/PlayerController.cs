@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,12 +16,18 @@ public class PlayerController : MonoBehaviour
     private int yPosition = 1;
 
     private const int maxPauwa = 3;
-
     private float standoPauwa = 3;
+    public Image pauwaImg;
 
+    private const float verticalStep = 5;
+
+    public static int score = 0;
+
+    
 
     private void Start()
     {
+        score = 0;
         rb = GetComponent<Rigidbody>();
         attackLeft = transform.GetChild(1).gameObject;
         attackRight = transform.GetChild(0).gameObject;
@@ -32,7 +39,7 @@ public class PlayerController : MonoBehaviour
         {
             if (yPosition != 2)
             {
-                transform.position = transform.position + new Vector3(0, 6, 0);
+                transform.position = transform.position + new Vector3(0, verticalStep, 0);
                 yPosition += 1;
 
             }
@@ -42,7 +49,7 @@ public class PlayerController : MonoBehaviour
         {
             if (yPosition != 0)
             {
-                transform.position = transform.position + new Vector3(0, -6, 0);
+                transform.position = transform.position + new Vector3(0, - verticalStep, 0);
                 yPosition -= 1;
 
             }
@@ -97,7 +104,9 @@ public class PlayerController : MonoBehaviour
             if (standoPauwa < maxPauwa)
                 standoPauwa += Time.deltaTime/2;
         }
-        //Debug.Log(standoPauwa);
+
+        pauwaImg.fillAmount = standoPauwa/maxPauwa;
+        
     }
 
 
