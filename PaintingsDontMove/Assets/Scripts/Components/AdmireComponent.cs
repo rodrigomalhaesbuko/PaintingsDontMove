@@ -5,9 +5,11 @@ using UnityEngine;
 public class AdmireComponent : MonoBehaviour
 {
     public static bool isAdmiring = false;
+    public static int howManyTimesWasAdmired = 0;
     private void Start()
     {
         isAdmiring = false;
+        howManyTimesWasAdmired = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -28,7 +30,8 @@ public class AdmireComponent : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         other.GetComponent<Animator>().SetTrigger("DontAdmire");
         other.GetComponent<ShadowMovement>().speed = 8;
-        isAdmiring = false; 
+        isAdmiring = false;
+        howManyTimesWasAdmired++;
     }
 
 }
