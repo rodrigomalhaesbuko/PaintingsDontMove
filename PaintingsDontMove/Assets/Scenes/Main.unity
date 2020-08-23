@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 1181359718}
   - component: {fileID: 1181359717}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -735,6 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c10f2e8a3ca2efc4484a750a83d9a25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   gameOverDelay: 1
 --- !u!4 &1181359718
 Transform:

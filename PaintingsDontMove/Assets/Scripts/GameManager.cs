@@ -8,8 +8,19 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
+    public int score;
     public float gameOverDelay = 1f;
-     
+
+    void Start()
+    {
+        score = 0;
+    }
+
+    //public void SetHighScore()
+    //{
+    //    score += 15;
+    //}
+
     public void EndGame()
     {
         if (!gameHasEnded)
@@ -21,8 +32,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void GameOver()
+    public void GameOver()
     {
+        //save highScore
+        Debug.Log("SCOREEE::::" + score.ToString());
+        PlayerPrefs.SetInt("score", score);
         SceneManager.LoadScene("GameOver");
         // Precisa fazer a Scene Game Over aparecer
     }

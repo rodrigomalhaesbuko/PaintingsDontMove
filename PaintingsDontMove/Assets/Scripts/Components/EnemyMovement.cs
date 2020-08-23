@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class EnemyMovement : MonoBehaviour
 {
     public float speed;
+    private GameManager gm;
+    private void Start()
+    {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -21,19 +26,26 @@ public class EnemyMovement : MonoBehaviour
     {
         if(other.gameObject.tag == TagEnum.Attack)
         {
+            StartCoroutine(applyScore());
             Destroy(gameObject);
         }
 
         if(other.gameObject.tag == TagEnum.Hieroglyph)
         {
             //end game
-            Debug.Log("teste\n");
-            SceneManager.LoadScene("GameOver");
+            gm.GameOver();
         }
 
         if (other.gameObject.tag == TagEnum.Hit)
         {
             GameObject.Find("Montu").GetComponent<Animator>().SetTrigger("Attack");
         }
+    }
+
+    IEnumerator applyScore()
+    {
+        gm.score += 15;
+        yield return null;
+           
     }
 }
