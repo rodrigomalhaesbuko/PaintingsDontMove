@@ -406,8 +406,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: DON'T LET YOUR ENEMIES REACH THE PILLAR IN THE CENTER BY STANDING IN FRONT
-    OF THEM RIGHT BEFORE THEY DO!
+  m_Text: USE YOUR POWER TO FREEZE TIME AND DON'T MOVE WHILE PEOPLE ARE LOOKING AT
+    THE PAINTING!
 --- !u!222 &445319045
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1211,7 +1211,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YOUR POWER WAS STOLEN!
+  m_Text: YOU WERE SEEN MOVING!
 --- !u!222 &2013088350
 CanvasRenderer:
   m_ObjectHideFlags: 0
