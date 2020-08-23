@@ -61,7 +61,7 @@ public class EnemyCMovement : EnemyMovement
         {
             //end game
             Debug.Log("teste\n");
-            SceneManager.LoadScene("GameOver");
+            gm.GameOver();
         }
     }
 
