@@ -16,7 +16,7 @@ public class MusicHandlerComponent : MonoBehaviour
         if(timeManipulation.ZAWARUDO)
         {
             mainSong.volume = 0;
-            mainFlute.volume = volume * 1.8f;
+            mainFlute.volume = 1;
         }
         else
         {
