@@ -49,6 +49,8 @@ public class EnemyGenerator : MonoBehaviour
 
         if (AdmireComponent.howManyTimesWasAdmired >= 2 && AdmireComponent.howManyTimesWasAdmired < 4)
         {
+            spawnTimeInit = 3;
+            spawnTimeEnd = 8;
             chanceToSpawnA = 75;
             chanceToSpawnB = 25;
             chanceToSpawnC = 0;
@@ -56,6 +58,8 @@ public class EnemyGenerator : MonoBehaviour
 
         if (AdmireComponent.howManyTimesWasAdmired >= 4 && AdmireComponent.howManyTimesWasAdmired < 6)
         {
+            spawnTimeInit = 2;
+            spawnTimeEnd = 7;
             chanceToSpawnA = 50;
             chanceToSpawnB = 25;
             chanceToSpawnC = 25;
