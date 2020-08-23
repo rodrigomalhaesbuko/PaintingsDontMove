@@ -16,15 +16,19 @@ public class PlayerController : MonoBehaviour
     private int yPosition = 1;
 
     private const int maxPauwa = 3;
-
     private float standoPauwa = 3;
+    public Image pauwaImg;
 
     private const float verticalStep = 5;
 
-    public Image pauwaImg;
+    public static int score = 0;
+    public Text scoreText;
+
+    
 
     private void Start()
     {
+        score = 0;
         rb = GetComponent<Rigidbody>();
         attackLeft = transform.GetChild(1).gameObject;
         attackRight = transform.GetChild(0).gameObject;
@@ -103,6 +107,7 @@ public class PlayerController : MonoBehaviour
         }
 
         pauwaImg.fillAmount = standoPauwa/maxPauwa;
+        scoreText.text = score.ToString();
     }
 
 

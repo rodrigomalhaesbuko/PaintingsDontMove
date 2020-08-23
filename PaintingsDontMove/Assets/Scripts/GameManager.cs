@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
     public float gameOverDelay = 1f;
-     
+
     public void EndGame()
     {
         if (!gameHasEnded)
@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
                     GameOver();
                 }
             }
+
         }
     }
 }

@@ -24,6 +24,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if(other.gameObject.tag == TagEnum.Attack)
         {
+            PlayerController.score++;
             Destroy(gameObject);
         }
 
