@@ -31,4 +31,20 @@ public class GameManager : MonoBehaviour
     {
         // Adiciona pontos ao placar e muda a UI
     }
+
+    public void Update()
+    {
+        Debug.Log(SceneManager.GetActiveScene().name);
+        if (SceneManager.GetActiveScene().name == "Main")
+        {
+            
+            if(AdmireComponent.isAdmiring)
+            {
+                if(!timeManipulation.ZAWARUDO)
+                {
+                    GameOver();
+                }
+            }
+        }
+    }
 }
