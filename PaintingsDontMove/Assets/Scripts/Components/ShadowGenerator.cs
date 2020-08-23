@@ -10,7 +10,6 @@ public class ShadowGenerator : MonoBehaviour
         {
             //trigger 3DPeaple
             Destroy(other.gameObject);
-            GameObject.Find("3DPersonGenerator").GetComponent<PersonGenerator>().CreatePerson();
         }
 
         if (other.gameObject.CompareTag(TagEnum.Person))
@@ -19,9 +18,5 @@ public class ShadowGenerator : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-
     }
-
-
-
 }
