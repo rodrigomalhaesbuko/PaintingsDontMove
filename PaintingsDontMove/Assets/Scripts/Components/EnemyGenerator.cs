@@ -23,14 +23,16 @@ public class EnemyGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        counter += Time.deltaTime;
-        if (counter > spawnTime)
+        if (!timeManipulation.ZAWARUDO)
         {
-            counter = 0;
-            spawnTime = Random.Range(spawnTimeInit, spawnTimeEnd);
-            StartCoroutine(SpawEnemy());
+            counter += Time.deltaTime;
+            if (counter > spawnTime)
+            {
+                counter = 0;
+                spawnTime = Random.Range(spawnTimeInit, spawnTimeEnd);
+                StartCoroutine(SpawEnemy());
+            }
         }
-
     }
 
     IEnumerator SpawEnemy()

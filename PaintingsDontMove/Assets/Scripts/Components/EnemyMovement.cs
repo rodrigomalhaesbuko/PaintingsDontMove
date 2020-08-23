@@ -7,15 +7,17 @@ public class EnemyMovement : MonoBehaviour
 {
     public float speed;
     public EnemyGenerator generator;
-    private int enemyHP = 2;
-    private int directionModifier = 1;
+    public float directionModifier = 1f;
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 pos = transform.position;
-        pos.x -= (speed * Time.deltaTime)*directionModifier;
-        transform.position = pos;
+        if (!timeManipulation.ZAWARUDO)
+        {
+            Vector2 pos = transform.position;
+            pos.x -= (speed * Time.deltaTime) * directionModifier ;
+            transform.position = pos;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -30,6 +32,11 @@ public class EnemyMovement : MonoBehaviour
             //end game
             Debug.Log("teste\n");
             SceneManager.LoadScene("GameOver");
+        }
+
+        if (other.gameObject.tag == TagEnum.Hit)
+        {
+            GameObject.Find("Montu").GetComponent<Animator>().SetTrigger("Attack");
         }
     }
 }
