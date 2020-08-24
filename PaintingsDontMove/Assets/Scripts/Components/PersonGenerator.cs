@@ -7,7 +7,7 @@ public class PersonGenerator : MonoBehaviour
     public GameObject PersonA;
     public GameObject ShadowA;
 
-    private float spawnTime = 5;
+    private float spawnTime = 8;
     private float counter = 0;
     public bool walking = false;
 

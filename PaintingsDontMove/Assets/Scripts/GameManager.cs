@@ -62,7 +62,9 @@ public class GameManager : MonoBehaviour
             {
                 if(!timeManipulation.ZAWARUDO || Input.GetKeyDown("up") || Input.GetKeyDown("down") || Input.GetKeyDown("right") || Input.GetKeyDown("left"))
                 {
-                    GameOverSeenMoving();
+                    GameObject.Find("handelWalk1(Clone)").GetComponent<Animator>().SetTrigger("Spooky");
+                    StartCoroutine(Spooky());
+                    
                 }
             }
 
@@ -73,5 +75,12 @@ public class GameManager : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(3);
+    }
+
+    IEnumerator Spooky()
+    {
+
+        yield return null;
+        GameOverSeenMoving();
     }
 }

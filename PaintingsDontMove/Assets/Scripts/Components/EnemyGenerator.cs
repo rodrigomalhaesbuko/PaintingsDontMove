@@ -10,6 +10,7 @@ public class EnemyGenerator : MonoBehaviour
     public GameObject EnemyC;
     public float spawnTimeInit;
     public float spawnTimeEnd;
+    public float firstSpawn;
     private float spawnTime;
     private float counter = 0;
     private int randomEnemy;
@@ -20,7 +21,7 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Start()
     {
-        spawnTime = Random.Range(spawnTimeInit, spawnTimeEnd);
+        spawnTime = firstSpawn;
     }
 
     // Update is called once per frame
