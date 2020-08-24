@@ -66,7 +66,7 @@ public class EnemyCMovement : EnemyMovement
         {
             //end game
             Debug.Log("teste\n");
-            gm.GameOver();
+            gm.GameOverDied();
         }
 
 

@@ -5,11 +5,21 @@ using UnityEngine.SceneManagement;
 public class Credits : MonoBehaviour
 {
 
+    public static bool gameOver = false;
+
     private void Update()
     {
         if (Input.anyKey)
         {
-            SceneManager.LoadScene("MainMenu");
+            if (gameOver)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+            else
+            {
+                SceneManager.LoadScene("GameOverSeenMoving");
+            }
+            
         }
     }
 }
