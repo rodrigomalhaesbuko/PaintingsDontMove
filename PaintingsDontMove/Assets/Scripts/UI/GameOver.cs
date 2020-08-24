@@ -6,6 +6,7 @@ public class GameOver : MonoBehaviour
 {
     public Text score;
     public Text highscore;
+    public static bool gameOver = false;
 
     private void Start()
     {
@@ -34,7 +35,8 @@ public class GameOver : MonoBehaviour
 
         if(Input.GetKeyDown("c"))
         {
-            SceneManager.LoadScene("Credits");
+            Credits.gameOver = gameOver;
+            SceneManager.LoadScene("Credits");   
         }
     }
 

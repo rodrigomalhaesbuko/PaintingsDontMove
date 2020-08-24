@@ -27,7 +27,7 @@ public class EnemyBMovement : EnemyMovement
         {
             //end game
             Debug.Log("teste\n");
-            gm.GameOver();
+            gm.GameOverDied();
         }
 
         if (other.gameObject.tag == TagEnum.Hit)

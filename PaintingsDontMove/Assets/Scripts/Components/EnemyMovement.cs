@@ -43,7 +43,7 @@ public class EnemyMovement : MonoBehaviour
         if(other.gameObject.tag == TagEnum.Hieroglyph)
         {
             //end game
-            gm.GameOver();
+            gm.GameOverDied();
         }
 
         if (other.gameObject.tag == TagEnum.Hit)
