@@ -49,9 +49,9 @@ public class EnemyGenerator : MonoBehaviour
 
         if (AdmireComponent.howManyTimesWasAdmired >= 2 && AdmireComponent.howManyTimesWasAdmired < 4)
         {
-            chanceToSpawnA = 75;
+            chanceToSpawnA = 65;
             chanceToSpawnB = 25;
-            chanceToSpawnC = 0;
+            chanceToSpawnC = 10;
         }
 
         if (AdmireComponent.howManyTimesWasAdmired >= 4 && AdmireComponent.howManyTimesWasAdmired < 6)
@@ -83,7 +83,7 @@ public class EnemyGenerator : MonoBehaviour
 
             if (chanceToSpawnC != 0)
             {
-                if (chanceToSpawnA + chanceToSpawnB > 75 && chanceToSpawnA + chanceToSpawnB + chanceToSpawnC <= 100)
+                if (chanceToSpawnA + chanceToSpawnB <= randomEnemy && chanceToSpawnA + chanceToSpawnB + chanceToSpawnC <= 100)
                 {
                     slowEnemySpawned = true;
                     GameObject enemy = Instantiate(EnemyC, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);

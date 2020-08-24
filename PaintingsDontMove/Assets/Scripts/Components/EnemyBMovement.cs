@@ -28,6 +28,11 @@ public class EnemyBMovement : EnemyMovement
             Debug.Log("teste\n");
             gm.GameOver();
         }
+
+        if (other.gameObject.tag == TagEnum.Hit)
+        {
+            GameObject.Find("Montu").GetComponent<Animator>().SetTrigger("Attack");
+        }
     }
 
     IEnumerator ApplyScore()

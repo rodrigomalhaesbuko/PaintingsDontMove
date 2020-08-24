@@ -67,6 +67,12 @@ public class EnemyCMovement : EnemyMovement
             Debug.Log("teste\n");
             gm.GameOver();
         }
+
+
+        if (other.gameObject.tag == TagEnum.Hit)
+        {
+            GameObject.Find("Montu").GetComponent<Animator>().SetTrigger("Attack");
+        }
     }
 
     private void StartKnockback()
