@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class EnemyMovement : MonoBehaviour
 {
     public float speed;
-    public int poits = 15;
+    public int points = 15;
     private GameManager gm;
 
     private void Start()
@@ -54,7 +54,7 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator ApplyScore()
     {
-        gm.score += poits;
+        gm.score += points;
         yield return null;
            
     }

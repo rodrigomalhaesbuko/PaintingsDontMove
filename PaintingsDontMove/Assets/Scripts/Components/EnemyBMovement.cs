@@ -9,6 +9,7 @@ public class EnemyBMovement : EnemyMovement
     private GameManager gm;
     private void Start()
     {
+        points = 20;
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
@@ -37,7 +38,7 @@ public class EnemyBMovement : EnemyMovement
 
     IEnumerator ApplyScore()
     {
-        gm.score += poits;
+        gm.score += points;
         yield return null;
 
     }
