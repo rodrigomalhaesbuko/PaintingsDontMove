@@ -31,6 +31,11 @@ public class GameOver : MonoBehaviour
         {
             SceneManager.LoadScene("Main");
         }
+
+        if(Input.GetKeyDown("c"))
+        {
+            SceneManager.LoadScene("Credits");
+        }
     }
 
 
