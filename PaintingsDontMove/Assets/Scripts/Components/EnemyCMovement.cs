@@ -14,6 +14,7 @@ public class EnemyCMovement : EnemyMovement
 
     private void Start()
     {
+        points = 40;
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
@@ -65,7 +66,7 @@ public class EnemyCMovement : EnemyMovement
         {
             //end game
             Debug.Log("teste\n");
-            gm.GameOver();
+            gm.GameOverDied();
         }
 
 
@@ -89,7 +90,7 @@ public class EnemyCMovement : EnemyMovement
 
     IEnumerator ApplyScore()
     {
-        gm.score += poits;
+        gm.score += points;
         Instantiate(deathParticle, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
         yield return null;
 

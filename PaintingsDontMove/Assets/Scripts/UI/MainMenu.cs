@@ -6,15 +6,11 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject menu;
 
-    public void Play()
+    private void Update()
     {
-        Debug.Log("Welcome - Clicked Play Button");
-        SceneManager.LoadScene("Main");
-    }
-
-    public void Credits()
-    {
-        Debug.Log("Welcome - Clicked Credits Button");
-        SceneManager.LoadScene("Credits");
+        if (Input.anyKey)
+        {
+            SceneManager.LoadScene("Main");
+        }
     }
 }

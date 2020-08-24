@@ -4,9 +4,22 @@ using UnityEngine.SceneManagement;
 
 public class Credits : MonoBehaviour
 {
-    public void Back()
+
+    public static bool gameOver = false;
+
+    private void Update()
     {
-        Debug.Log("Credits - Clicked Back Button");
-        SceneManager.LoadScene("MainMenu");
+        if (Input.anyKey)
+        {
+            if (gameOver)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+            else
+            {
+                SceneManager.LoadScene("GameOverSeenMoving");
+            }
+            
+        }
     }
 }

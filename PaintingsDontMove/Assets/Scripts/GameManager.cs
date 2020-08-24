@@ -23,12 +23,12 @@ public class GameManager : MonoBehaviour
     //    score += 15;
     //}
 
-    public void GameOver()
+    public void GameOverDied()
     {
         //save highScore
         Debug.Log("SCOREEE::::" + score.ToString());
         PlayerPrefs.SetInt("score", score);
-
+        GameOver.gameOver = true;
         SceneManager.LoadScene("GameOver");
         // Precisa fazer a Scene Game Over aparecer
     }
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         //save highScore
         Debug.Log("SCOREEE::::" + score.ToString());
         PlayerPrefs.SetInt("score", score);
+        GameOver.gameOver = false;
         Invoke("LoadGameOverSeenMoving", gameOverDelay);
         // Precisa fazer a Scene Game Over aparecer
     }

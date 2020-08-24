@@ -9,6 +9,7 @@ public class EnemyBMovement : EnemyMovement
     private GameManager gm;
     private void Start()
     {
+        points = 20;
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
@@ -26,7 +27,7 @@ public class EnemyBMovement : EnemyMovement
         {
             //end game
             Debug.Log("teste\n");
-            gm.GameOver();
+            gm.GameOverDied();
         }
 
         if (other.gameObject.tag == TagEnum.Hit)
@@ -38,7 +39,7 @@ public class EnemyBMovement : EnemyMovement
 
     IEnumerator ApplyScore()
     {
-        gm.score += poits;
+        gm.score += points;
         Debug.Log("OBBAAAAAAAAA");
         Instantiate(deathParticle, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
         StartCoroutine(EraseParticle());

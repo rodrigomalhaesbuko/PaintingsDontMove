@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public float speed;
     public GameObject deathParticle;
-    public int poits = 15;
+    public int points = 15;
     private GameManager gm;
 
     private void Start()
@@ -44,7 +44,7 @@ public class EnemyMovement : MonoBehaviour
         if(other.gameObject.tag == TagEnum.Hieroglyph)
         {
             //end game
-            gm.GameOver();
+            gm.GameOverDied();
         }
 
         if (other.gameObject.tag == TagEnum.Hit)
@@ -57,7 +57,7 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator ApplyScore()
     {
-        gm.score += poits;
+        gm.score += points;
         yield return new WaitForSeconds(1);
       
     }
