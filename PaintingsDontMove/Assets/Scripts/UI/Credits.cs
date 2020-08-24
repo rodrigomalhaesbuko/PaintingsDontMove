@@ -7,19 +7,33 @@ public class Credits : MonoBehaviour
 
     public static bool gameOver = false;
 
+    private float timer = 0;
+
+    private void Start()
+    {
+        timer = 0;
+    }
+
     private void Update()
     {
-        if (Input.anyKey)
+        timer += Time.deltaTime;
+
+        if (timer > 0.5f)
         {
-            if (gameOver)
+            timer = 0.6f;
+
+            if (Input.anyKey)
             {
-                SceneManager.LoadScene("GameOver");
+                if (gameOver)
+                {
+                    SceneManager.LoadScene("GameOver");
+                }
+                else
+                {
+                    SceneManager.LoadScene("GameOverSeenMoving");
+                }
+
             }
-            else
-            {
-                SceneManager.LoadScene("GameOverSeenMoving");
-            }
-            
         }
     }
 }
