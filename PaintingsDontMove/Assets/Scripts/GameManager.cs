@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
+        //Debug.Log(SceneManager.GetActiveScene().name);
         if (SceneManager.GetActiveScene().name == "Main")
         {
             

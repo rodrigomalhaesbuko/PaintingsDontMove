@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float dist;
     private GameObject attackLeft;
     private GameObject attackRight;
+    public GameObject footparticle;
 
     private Rigidbody rb;
     private bool isDead = false;
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private const float verticalStep = 5;
 
     public static int score = 0;
-
+    private GameObject hitCOmponent;
     
 
     private void Start()
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         attackLeft = transform.GetChild(1).gameObject;
         attackRight = transform.GetChild(0).gameObject;
+        hitCOmponent = GameObject.Find("Hit");
 
     }
     private void Update()
@@ -41,7 +43,8 @@ public class PlayerController : MonoBehaviour
             {
                 transform.position = transform.position + new Vector3(0, verticalStep, 0);
                 yPosition += 1;
-
+                GameObject particle = Instantiate(footparticle, new Vector3(transform.position.x, transform.position.y - 2.2f, 0), Quaternion.identity);
+                StartCoroutine(DeleteParticle(particle));
             }
         }
 
@@ -51,15 +54,19 @@ public class PlayerController : MonoBehaviour
             {
                 transform.position = transform.position + new Vector3(0, - verticalStep, 0);
                 yPosition -= 1;
-
+                GameObject particle = Instantiate(footparticle, new Vector3(transform.position.x, transform.position.y - 2.2f, 0), Quaternion.identity);
+                StartCoroutine(DeleteParticle(particle));
             }
         }
 
         if (Input.GetKeyDown("left"))
         {
+            hitCOmponent.GetComponent<ParticleComponent>().right = false;
             transform.eulerAngles = Vector3.zero;
             attackLeft.SetActive(true);
             attackRight.SetActive(false);
+            GameObject particle = Instantiate(footparticle, new Vector3(transform.position.x, transform.position.y - 2.2f, 0), Quaternion.identity);
+            StartCoroutine(DeleteParticle(particle));
 
             if (xPosition != 0)
             {
@@ -72,9 +79,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown("right"))
         {
+            hitCOmponent.GetComponent<ParticleComponent>().right = true;
             transform.eulerAngles = new Vector3(0, 180, 0);
             attackRight.SetActive(true);
             attackLeft.SetActive(false);
+            GameObject particle = Instantiate(footparticle, new Vector3(transform.position.x, transform.position.y - 2.2f, 0), Quaternion.identity);
+            StartCoroutine(DeleteParticle(particle));
 
             if (xPosition != 1)
             {
@@ -82,6 +92,7 @@ public class PlayerController : MonoBehaviour
                 xPosition += 1;
 
             }
+
         }
 
         if (Input.GetKey("space"))
@@ -107,6 +118,13 @@ public class PlayerController : MonoBehaviour
 
         pauwaImg.fillAmount = standoPauwa/maxPauwa;
         
+    }
+
+
+    IEnumerator DeleteParticle(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 
 

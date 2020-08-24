@@ -71,6 +71,7 @@ public class EnemyCMovement : EnemyMovement
 
         if (other.gameObject.tag == TagEnum.Hit)
         {
+            StartCoroutine(PlayParticle(other.gameObject));
             GameObject.Find("Montu").GetComponent<Animator>().SetTrigger("Attack");
         }
     }
@@ -89,7 +90,14 @@ public class EnemyCMovement : EnemyMovement
     IEnumerator ApplyScore()
     {
         gm.score += poits;
+        Instantiate(deathParticle, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
         yield return null;
 
+    }
+
+    IEnumerator PlayParticle(GameObject other)
+    {
+        other.GetComponent<ParticleComponent>().PlayParticle();
+        yield return null;
     }
 }

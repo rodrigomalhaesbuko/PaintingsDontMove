@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class EnemyMovement : MonoBehaviour
 {
     public float speed;
+    public GameObject deathParticle;
     public int poits = 15;
     private GameManager gm;
 
@@ -48,14 +49,23 @@ public class EnemyMovement : MonoBehaviour
 
         if (other.gameObject.tag == TagEnum.Hit)
         {
+            StartCoroutine(PlayParticle(other.gameObject));
             GameObject.Find("Montu").GetComponent<Animator>().SetTrigger("Attack");
+            //Instantiate(deathParticle, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
         }
     }
 
     IEnumerator ApplyScore()
     {
         gm.score += poits;
+        yield return new WaitForSeconds(1);
+      
+    }
+
+    IEnumerator PlayParticle(GameObject other)
+    {
+
+        other.GetComponent<ParticleComponent>().PlayParticle();
         yield return null;
-           
     }
 }
