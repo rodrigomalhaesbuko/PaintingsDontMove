@@ -4,9 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class Credits : MonoBehaviour
 {
-    public void Back()
+
+    private void Update()
     {
-        Debug.Log("Credits - Clicked Back Button");
-        SceneManager.LoadScene("MainMenu");
+        if (Input.anyKey)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }
